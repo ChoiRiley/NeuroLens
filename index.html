@@ -34,7 +34,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(255,255,255,0.92);
@@ -45,7 +44,7 @@
       height: 56px;
     }
     .nav-logo {
-      font-size: 15px; font-weight: 500; letter-spacing: 0.01em;
+      font-size: 15px; font-weight: 500;
       text-decoration: none; color: var(--text-primary);
     }
     .nav-logo span { color: var(--teal); }
@@ -56,27 +55,22 @@
     }
     .nav-links a:hover { color: var(--text-primary); }
 
-    /* LAYOUT */
     .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
     section { padding: 72px 0; border-bottom: 0.5px solid var(--border); }
 
-    /* HERO */
     .hero { padding: 96px 0 80px; }
     .hero-tag {
       display: inline-block;
       font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
       text-transform: uppercase; color: var(--teal-mid);
       background: var(--teal-light);
-      padding: 4px 12px; border-radius: 20px;
-      margin-bottom: 24px;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 24px;
     }
     .hero h1 {
       font-family: 'Lora', serif;
-      font-size: clamp(32px, 5vw, 46px);
+      font-size: clamp(30px, 5vw, 44px);
       font-weight: 500; line-height: 1.2;
-      color: var(--text-primary);
-      margin-bottom: 22px;
-      max-width: 580px;
+      margin-bottom: 22px; max-width: 580px;
     }
     .hero h1 em { font-style: italic; color: var(--teal); }
     .hero-lead {
@@ -105,32 +99,27 @@
     }
     .btn-ghost:hover { color: var(--text-primary); }
 
-    /* SECTION HEADERS */
     .section-eyebrow {
       font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--text-tertiary);
-      margin-bottom: 8px;
+      text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 8px;
     }
     .section-title {
       font-family: 'Lora', serif;
       font-size: clamp(22px, 3vw, 28px); font-weight: 500;
-      color: var(--text-primary); margin-bottom: 10px;
-      line-height: 1.3;
+      margin-bottom: 10px; line-height: 1.3;
     }
     .section-sub {
       font-size: 15px; color: var(--text-secondary);
       max-width: 520px; margin-bottom: 40px; line-height: 1.7;
     }
 
-    /* STORY / INTRO */
     .story-body {
       font-size: 16px; line-height: 1.95;
       color: var(--text-secondary); margin-bottom: 22px;
     }
     .pullquote {
       border-left: 2px solid var(--teal);
-      padding: 6px 0 6px 24px;
-      margin: 32px 0;
+      padding: 6px 0 6px 24px; margin: 32px 0;
     }
     .pullquote p {
       font-family: 'Lora', serif;
@@ -138,7 +127,6 @@
       color: var(--text-primary); font-style: italic;
     }
 
-    /* TOPICS GRID */
     .topics-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -147,29 +135,30 @@
     .topic-card {
       background: var(--bg);
       border: 0.5px solid var(--border);
-      border-radius: 12px;
-      padding: 22px 20px;
+      border-radius: 12px; padding: 22px 20px;
       transition: border-color 0.15s, transform 0.15s;
     }
     .topic-card:hover { border-color: rgba(0,0,0,0.22); transform: translateY(-2px); }
-    .topic-icon {
-      font-size: 22px; color: var(--teal);
-      margin-bottom: 14px; display: block;
+    .topic-tag {
+      display: inline-block; font-size: 10px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 2px 9px; border-radius: 20px; margin-bottom: 12px;
     }
-    .topic-name { font-size: 14px; font-weight: 500; margin-bottom: 7px; }
-    .topic-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+    .tag-tech { background: #E1F5EE; color: #0F6E56; }
+    .tag-neuro { background: #E6F1FB; color: #185FA5; }
+    .tag-personal { background: #FAEEDA; color: #854F0B; }
+    .tag-biotech { background: #EEEDFE; color: #534AB7; }
+    .topic-name { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+    .topic-body { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
 
-    /* BLOG */
     .blog-list { display: flex; flex-direction: column; }
     .blog-item {
       display: flex; align-items: flex-start; gap: 18px;
-      padding: 22px 0;
-      border-bottom: 0.5px solid var(--border);
-      text-decoration: none; color: inherit;
-      transition: opacity 0.15s;
+      padding: 24px 0; border-bottom: 0.5px solid var(--border);
+      text-decoration: none; color: inherit; transition: opacity 0.15s;
     }
     .blog-item:last-child { border-bottom: none; }
-    .blog-item:hover { opacity: 0.75; }
+    .blog-item:hover { opacity: 0.7; }
     .blog-num {
       font-size: 11px; font-weight: 500;
       color: var(--text-tertiary); min-width: 24px; padding-top: 4px;
@@ -180,32 +169,35 @@
       letter-spacing: 0.06em; text-transform: uppercase;
       padding: 2px 9px; border-radius: 20px; margin-bottom: 7px;
     }
-    .tag-neuro { background: var(--teal-light); color: var(--teal-mid); }
-    .tag-tech { background: #E6F1FB; color: #185FA5; }
-    .tag-personal { background: #FAEEDA; color: #854F0B; }
-    .tag-biotech { background: #EEEDFE; color: #534AB7; }
-    .blog-title { font-size: 15px; font-weight: 500; margin-bottom: 5px; }
-    .blog-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
-    .blog-arrow { color: var(--text-tertiary); font-size: 16px; padding-top: 4px; }
+    .blog-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+    .blog-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+    .blog-arrow { color: var(--text-tertiary); padding-top: 4px; font-size: 15px; }
 
-    /* MISSION STATS */
     .stats-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
-      margin-top: 28px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px;
     }
-    .stat-card {
-      background: var(--bg-secondary);
-      border-radius: 10px; padding: 18px 20px;
-    }
+    .stat-card { background: var(--bg-secondary); border-radius: 10px; padding: 18px 20px; }
     .stat-num {
       font-family: 'Lora', serif;
       font-size: 32px; font-weight: 500;
-      color: var(--teal); line-height: 1;
-      margin-bottom: 6px;
+      color: var(--teal); line-height: 1; margin-bottom: 6px;
     }
     .stat-label { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
 
-    /* FOOTER */
+    .about-body {
+      font-size: 16px; line-height: 1.95;
+      color: var(--text-secondary); margin-bottom: 20px; max-width: 560px;
+    }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px;
+    }
+    .about-card { background: var(--bg-secondary); border-radius: 10px; padding: 16px 18px; }
+    .about-card-label {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;
+    }
+    .about-card-val { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
     footer {
       padding: 32px 0;
       display: flex; align-items: center; justify-content: space-between;
@@ -219,17 +211,14 @@
     }
     .footer-links a:hover { color: var(--text-primary); }
 
-    /* RESPONSIVE */
     @media (max-width: 600px) {
       nav { padding: 0 20px; }
-      .nav-links { gap: 18px; }
+      .nav-links { gap: 16px; }
       .container { padding: 0 20px; }
       section { padding: 52px 0; }
       .hero { padding: 64px 0 52px; }
-      .stats-grid { grid-template-columns: 1fr; }
+      .stats-grid, .about-grid { grid-template-columns: 1fr; }
     }
-
-    /* REDUCED MOTION */
     @media (prefers-reduced-motion: reduce) {
       .topic-card { transition: none; }
     }
@@ -237,7 +226,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a class="nav-logo" href="#">Neuro<span>Lens</span></a>
     <ul class="nav-links">
@@ -263,30 +251,18 @@
     </div>
   </section>
 
-  <!-- MY STORY -->
+  <!-- STORY -->
   <section id="story">
     <div class="container">
       <div class="section-eyebrow">Where this all began</div>
       <h2 class="section-title">The man who taught me everything —<br>and the disease that started taking him away</h2>
-
-      <p class="story-body">
-        My grandfather used to fix things. Broken radios, leaking pipes, the wobbly chair leg that nobody else bothered with. He had steady hands and a patient mind, and when I was little he let me sit beside him while he worked, explaining each step like I was already capable of understanding. I wasn't always. But I listened. That's where I learned that hard problems are worth sitting with.
-      </p>
-      <p class="story-body">
-        A few years ago, I started noticing things. Small things at first — a word he couldn't find mid-sentence, a tremor in his right hand that he'd try to hide by slipping it into his pocket. Then the diagnosis came: Parkinson's disease. Then dementia. Two diseases that work quietly and steadily and, as far as modern medicine is concerned, permanently. There is no cure for either.
-      </p>
-
+      <p class="story-body">My grandfather used to fix things. Broken radios, leaking pipes, the wobbly chair leg that nobody else bothered with. He had steady hands and a patient mind, and when I was little he let me sit beside him while he worked, explaining each step like I was already capable of understanding. I wasn't always. But I listened. That's where I learned that hard problems are worth sitting with.</p>
+      <p class="story-body">A few years ago, I started noticing things. Small things at first — a word he couldn't find mid-sentence, a tremor in his right hand that he'd try to hide by slipping it into his pocket. Then the diagnosis came: Parkinson's disease. Then dementia. Two diseases that work quietly and steadily and, as far as modern medicine is concerned, permanently. There is no cure for either.</p>
       <div class="pullquote">
         <p>Watching someone lose their memories isn't like losing a person all at once. It's slower than that. It happens in small moments — and that's what makes it so hard to accept.</p>
       </div>
-
-      <p class="story-body">
-        I didn't know how to grieve something that was still happening. So I did what I always do when something doesn't make sense: I looked it up. I read about dopamine and neurons and the basal ganglia. I learned what Lewy bodies are and why they matter. I found papers about deep brain stimulation and stayed up until 2 a.m. reading about clinical trials for drugs that don't exist yet. I wasn't looking for comfort. I was looking for a way in.
-      </p>
-      <p class="story-body">
-        That's when I realized neuroscience wasn't just interesting to me. It was urgent. And I understood something I couldn't have learned any other way: the gap between "we're making progress" and "we have a cure" is still enormous — and someone has to close it. This website is how I'm starting. Every article I read, every concept I try to understand, every question I can't yet answer — it goes here.
-      </p>
-
+      <p class="story-body">I didn't know how to grieve something that was still happening. So I did what I always do when something doesn't make sense: I looked it up. I read about dopamine and neurons and the basal ganglia. I learned what Lewy bodies are and why they matter. I found papers about deep brain stimulation and stayed up until 2 a.m. reading about clinical trials for drugs that don't exist yet. I wasn't looking for comfort. I was looking for a way in.</p>
+      <p class="story-body">That's when I realized neuroscience wasn't just interesting to me. It was urgent. And I understood something I couldn't have learned any other way: the gap between "we're making progress" and "we have a cure" is still enormous — and someone has to close it. This website is how I'm starting.</p>
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-num">1B+</div>
@@ -308,24 +284,24 @@
       <p class="section-sub">Four areas at the intersection of neuroscience and emerging technology — the ones keeping me up at night.</p>
       <div class="topics-grid">
         <div class="topic-card">
-          <span class="topic-icon">⬡</span>
+          <span class="topic-tag tag-tech">Tech</span>
           <div class="topic-name">Meta Glasses & AR</div>
-          <div class="topic-desc">How augmented reality is becoming a window into how we perceive and process the world around us.</div>
+          <div class="topic-body">Most people see Meta glasses as a consumer gadget. I see them as something else — a real-time window into how the brain perceives, filters, and constructs the world around it. When you overlay digital information onto physical space, you're changing how the brain processes reality. That intersection of hardware, cognition, and perception is one of the most exciting research frontiers I've found.</div>
         </div>
         <div class="topic-card">
-          <span class="topic-icon">◎</span>
+          <span class="topic-tag tag-neuro">Neuroscience</span>
           <div class="topic-name">Brain Mapping</div>
-          <div class="topic-desc">Exploring the unmapped regions of the brain with new imaging, biosensing, and neural interface technology.</div>
+          <div class="topic-body">The human brain has roughly 86 billion neurons and 100 trillion synaptic connections. We've mapped less of it than we've mapped the ocean floor. New tools — high-resolution fMRI, calcium imaging, neural organoids — are opening doors into regions we couldn't study before. How memories are encoded, why certain neurons die in Parkinson's, what happens in the earliest stages of dementia: the answers are in there.</div>
         </div>
         <div class="topic-card">
-          <span class="topic-icon">♡</span>
+          <span class="topic-tag tag-personal">Personal</span>
           <div class="topic-name">Parkinson's & Dementia</div>
-          <div class="topic-desc">Searching for the therapies that could change the lives of millions — including my grandfather.</div>
+          <div class="topic-body">This one isn't academic for me. My grandfather has both. Deep brain stimulation can manage tremors. Cholinesterase inhibitors can slow cognitive decline. But none of it reverses the damage. That gap — between managing a disease and actually curing it — is where I want to work. Not someday. Starting now, with understanding.</div>
         </div>
         <div class="topic-card">
-          <span class="topic-icon">∿</span>
+          <span class="topic-tag tag-biotech">Biotech</span>
           <div class="topic-name">Biotech Frontiers</div>
-          <div class="topic-desc">Gene therapy, CRISPR, and biosensors — the tools that are rewriting what's possible in medicine.</div>
+          <div class="topic-body">CRISPR can edit a single letter of DNA with near-surgical precision. Viral vectors can carry therapeutic genes directly into neurons. Biosensors can detect neurological changes before symptoms appear. These aren't science fiction — they're in labs and clinical trials right now. The most important breakthroughs in brain disease will come from people who understand both biology and technology.</div>
         </div>
       </div>
     </div>
@@ -343,7 +319,7 @@
           <div class="blog-body">
             <span class="blog-tag tag-tech">Tech</span>
             <div class="blog-title">What Meta glasses taught me about perception</div>
-            <div class="blog-desc">AR isn't just a gadget. It's a tool for understanding how the brain constructs reality in real time.</div>
+            <div class="blog-desc">AR isn't just a gadget. When digital information overlays the physical world, the brain has to decide what's real — and that decision tells us everything about how perception actually works. I went deep on the neuroscience of visual processing and came out with a completely different understanding of what these devices are.</div>
           </div>
           <div class="blog-arrow">→</div>
         </a>
@@ -352,7 +328,7 @@
           <div class="blog-body">
             <span class="blog-tag tag-neuro">Neuroscience</span>
             <div class="blog-title">Deep brain stimulation — shocking the brain back to life</div>
-            <div class="blog-desc">The surgery that sends electricity into the brain to control tremors. How it works, and why it's not a cure.</div>
+            <div class="blog-desc">Surgeons drill into the skull, implant electrodes deep inside the brain, and send electrical pulses into the subthalamic nucleus. For many Parkinson's patients, tremors stop almost instantly. I wanted to understand exactly why — and why it still isn't a cure.</div>
           </div>
           <div class="blog-arrow">→</div>
         </a>
@@ -361,7 +337,7 @@
           <div class="blog-body">
             <span class="blog-tag tag-personal">Personal</span>
             <div class="blog-title">My grandfather and the disease I want to cure</div>
-            <div class="blog-desc">Why Parkinson's and dementia became my reason. A personal essay about memory, loss, and hope.</div>
+            <div class="blog-desc">A personal essay about watching Parkinson's and dementia take someone apart piece by piece — and why that became the reason I started studying neuroscience at 16. This is the one that started everything.</div>
           </div>
           <div class="blog-arrow">→</div>
         </a>
@@ -370,7 +346,7 @@
           <div class="blog-body">
             <span class="blog-tag tag-biotech">Biotech</span>
             <div class="blog-title">Could CRISPR edit away Parkinson's?</div>
-            <div class="blog-desc">Exploring whether gene editing could one day rewrite the genetic risk factors for neurodegenerative disease.</div>
+            <div class="blog-desc">Some forms of Parkinson's are linked to mutations in genes like LRRK2 and PINK1. If CRISPR can fix a single letter of DNA, could it one day correct those mutations before symptoms begin? I dug into the research — and found both real promise and real obstacles.</div>
           </div>
           <div class="blog-arrow">→</div>
         </a>
@@ -383,19 +359,34 @@
     <div class="container">
       <div class="section-eyebrow">About</div>
       <h2 class="section-title">Who I am</h2>
-      <p class="story-body" style="max-width: 560px;">
-        I'm a rising junior in high school, Class of 2028, based in Seoul. I'm passionate about neurotechnology, biotech, and the emerging tools being built at the intersection of both. My grandfather's diagnosis with Parkinson's disease and dementia turned an academic curiosity into a personal mission.
-      </p>
-      <p class="story-body" style="max-width: 560px;">
-        I don't know yet exactly what career path I'll take — research, medicine, engineering, or something that doesn't have a name yet. What I do know is the problem I want to work on. This site is how I'm starting. Every article I read, every concept I wrestle with, every question I can't yet answer — it goes here.
-      </p>
-      <p class="story-body" style="max-width: 560px; margin-bottom: 0;">
-        The best way I know to honor my grandfather's steady hands is to build something with mine.
-      </p>
+      <p class="about-body">I'm a rising 11th grader, Class of 2028, based in Seoul. I'm passionate about neurotechnology, biotech, and the emerging tools being built at the intersection of both — not as hobbies, but as the fields I intend to dedicate my life to.</p>
+      <p class="about-body">My grandfather's diagnosis with Parkinson's disease and dementia turned what started as academic curiosity into something more urgent. I realized there's an enormous gap between "we're making progress" and "we have a cure" — and that closing it requires people who understand both the biology and the technology.</p>
+      <div class="pullquote">
+        <p>I don't know yet exactly what I'll build or discover. But I know the problem I want to work on — and I know that starting now, even as a high school student, matters.</p>
+      </div>
+      <p class="about-body">NeuroLens is where I document everything: the papers I read, the concepts I wrestle with, the questions I can't yet answer. It's a record of learning in public — honestly, from the beginning.</p>
+      <p class="about-body">The best way I know to honor my grandfather's steady hands is to build something with mine.</p>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-card-label">Currently exploring</div>
+          <div class="about-card-val">Deep brain stimulation, CRISPR gene therapy, neural interfaces, AR perception research</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Based in</div>
+          <div class="about-card-val">Seoul, South Korea · Class of 2028</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Goal</div>
+          <div class="about-card-val">Contribute to curing Parkinson's disease and dementia — through research, biotech, or both</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">This site is</div>
+          <div class="about-card-val">A living research journal, updated as I learn — not a finished product</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <div class="container">
     <footer>
       <div class="footer-name">NeuroLens · Class of 2028</div>
