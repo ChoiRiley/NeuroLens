@@ -3,146 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeuroLens — Class of 2028</title>
+  <title>NeuroLens — A High School Student's Journey into Neuroscience</title>
+  <meta name="description" content="A South Korean student at Mercersburg Academy documents his journey into neurotechnology, brain research, and the quest to understand Parkinson's disease and Alzheimer's. Class of 2028." />
+  <meta name="keywords" content="neuroscience, neurotechnology, Parkinson's disease, Alzheimer's disease, Meta glasses, brain mapping, CRISPR, biotech, high school research, neurotech blog" />
+  <meta name="author" content="NeuroLens" />
+  <meta property="og:title" content="NeuroLens — A High School Student's Journey into Neuroscience" />
+  <meta property="og:description" content="Documenting a personal mission to understand and one day help cure Parkinson's and Alzheimer's disease — through neurotechnology, biotech, and relentless curiosity." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://yourusername.github.io/neurolens/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --teal: #1D9E75;
-      --teal-light: #E1F5EE;
-      --teal-mid: #0F6E56;
-      --text-primary: #111110;
-      --text-secondary: #5F5E5A;
-      --text-tertiary: #888780;
-      --border: rgba(0,0,0,0.1);
-      --bg: #ffffff;
-      --bg-secondary: #F7F6F3;
-      --max: 720px;
+      --teal: #1D9E75; --teal-light: #E1F5EE; --teal-mid: #0F6E56;
+      --text-primary: #111110; --text-secondary: #5F5E5A; --text-tertiary: #888780;
+      --border: rgba(0,0,0,0.1); --bg: #ffffff; --bg-secondary: #F7F6F3; --max: 740px;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text-primary);
-      background: var(--bg);
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
+    body { font-family: 'Inter', sans-serif; color: var(--text-primary); background: var(--bg); -webkit-font-smoothing: antialiased; }
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.93); backdrop-filter: blur(12px);
       border-bottom: 0.5px solid var(--border);
-      padding: 0 32px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 56px;
+      padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 58px;
     }
-    .nav-logo {
-      font-size: 15px; font-weight: 500;
-      text-decoration: none; color: var(--text-primary);
-    }
+    .nav-logo { font-size: 15px; font-weight: 500; text-decoration: none; color: var(--text-primary); }
     .nav-logo span { color: var(--teal); }
     .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a {
-      font-size: 13px; color: var(--text-secondary);
-      text-decoration: none; transition: color 0.15s;
-    }
-    .nav-links a:hover { color: var(--text-primary); }
-
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
-    section { padding: 72px 0; border-bottom: 0.5px solid var(--border); }
-
-    .hero { padding: 96px 0 80px; }
+    .nav-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    section { padding: 80px 0; border-bottom: 0.5px solid var(--border); }
+    .hero { padding: 100px 0 88px; }
     .hero-tag {
-      display: inline-block;
-      font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--teal-mid);
-      background: var(--teal-light);
-      padding: 4px 12px; border-radius: 20px; margin-bottom: 24px;
+      display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--teal-mid); background: var(--teal-light);
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 26px;
     }
     .hero h1 {
-      font-family: 'Lora', serif;
-      font-size: clamp(30px, 5vw, 44px);
-      font-weight: 500; line-height: 1.2;
-      margin-bottom: 22px; max-width: 580px;
+      font-family: 'Lora', serif; font-size: clamp(32px, 5vw, 48px);
+      font-weight: 500; line-height: 1.18; margin-bottom: 24px; max-width: 600px;
     }
     .hero h1 em { font-style: italic; color: var(--teal); }
-    .hero-lead {
-      font-size: 17px; line-height: 1.8;
-      color: var(--text-secondary);
-      max-width: 560px; margin-bottom: 36px;
-    }
+    .hero-lead { font-size: 17px; line-height: 1.85; color: var(--text-secondary); max-width: 580px; margin-bottom: 38px; }
     .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--teal); color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px; font-weight: 500;
-      padding: 11px 22px; border-radius: 8px;
-      text-decoration: none; border: none; cursor: pointer;
-      transition: opacity 0.15s;
+      background: var(--teal); color: #fff; font-family: 'Inter', sans-serif;
+      font-size: 14px; font-weight: 500; padding: 11px 22px; border-radius: 8px;
+      text-decoration: none; transition: opacity 0.15s;
     }
-    .btn-primary:hover { opacity: 0.88; }
+    .btn-primary:hover { opacity: 0.86; }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 6px;
-      background: transparent; color: var(--text-secondary);
-      font-family: 'Inter', sans-serif;
-      font-size: 14px; padding: 11px 0;
-      border: none; cursor: pointer; text-decoration: none;
-      transition: color 0.15s;
+      background: transparent; color: var(--text-secondary); font-family: 'Inter', sans-serif;
+      font-size: 14px; padding: 11px 0; text-decoration: none; transition: color 0.15s;
     }
     .btn-ghost:hover { color: var(--text-primary); }
-
-    .section-eyebrow {
-      font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 8px;
-    }
-    .section-title {
-      font-family: 'Lora', serif;
-      font-size: clamp(22px, 3vw, 28px); font-weight: 500;
-      margin-bottom: 10px; line-height: 1.3;
-    }
-    .section-sub {
-      font-size: 15px; color: var(--text-secondary);
-      max-width: 520px; margin-bottom: 40px; line-height: 1.7;
-    }
-
-    .story-body {
-      font-size: 16px; line-height: 1.95;
-      color: var(--text-secondary); margin-bottom: 22px;
-    }
-    .pullquote {
-      border-left: 2px solid var(--teal);
-      padding: 6px 0 6px 24px; margin: 32px 0;
-    }
-    .pullquote p {
-      font-family: 'Lora', serif;
-      font-size: 18px; line-height: 1.75;
-      color: var(--text-primary); font-style: italic;
-    }
-
-    .topics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 14px;
-    }
+    .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 8px; }
+    .sec-title { font-family: 'Lora', serif; font-size: clamp(22px, 3vw, 30px); font-weight: 500; margin-bottom: 12px; line-height: 1.28; }
+    .sec-sub { font-size: 15px; color: var(--text-secondary); max-width: 540px; margin-bottom: 42px; line-height: 1.75; }
+    .story-body { font-size: 16px; line-height: 1.95; color: var(--text-secondary); margin-bottom: 22px; max-width: 640px; }
+    .pullquote { border-left: 2px solid var(--teal); padding: 6px 0 6px 24px; margin: 36px 0; }
+    .pullquote p { font-family: 'Lora', serif; font-size: 19px; line-height: 1.72; color: var(--text-primary); font-style: italic; max-width: 580px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+    .stat-card { background: var(--bg-secondary); border-radius: 10px; padding: 20px 22px; }
+    .stat-num { font-family: 'Lora', serif; font-size: 34px; font-weight: 500; color: var(--teal); line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+    .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
     .topic-card {
-      background: var(--bg);
-      border: 0.5px solid var(--border);
-      border-radius: 12px; padding: 22px 20px;
-      transition: border-color 0.15s, transform 0.15s;
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: 12px; padding: 24px 20px;
+      transition: border-color 0.15s, transform 0.15s; text-decoration: none; color: inherit; display: block;
     }
     .topic-card:hover { border-color: rgba(0,0,0,0.22); transform: translateY(-2px); }
     .topic-tag {
       display: inline-block; font-size: 10px; font-weight: 500;
       letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 2px 9px; border-radius: 20px; margin-bottom: 12px;
+      padding: 2px 9px; border-radius: 20px; margin-bottom: 13px;
     }
     .tag-tech { background: #E1F5EE; color: #0F6E56; }
     .tag-neuro { background: #E6F1FB; color: #185FA5; }
@@ -150,19 +91,15 @@
     .tag-biotech { background: #EEEDFE; color: #534AB7; }
     .topic-name { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
     .topic-body { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
-
     .blog-list { display: flex; flex-direction: column; }
     .blog-item {
-      display: flex; align-items: flex-start; gap: 18px;
-      padding: 24px 0; border-bottom: 0.5px solid var(--border);
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 26px 0; border-bottom: 0.5px solid var(--border);
       text-decoration: none; color: inherit; transition: opacity 0.15s;
     }
     .blog-item:last-child { border-bottom: none; }
-    .blog-item:hover { opacity: 0.7; }
-    .blog-num {
-      font-size: 11px; font-weight: 500;
-      color: var(--text-tertiary); min-width: 24px; padding-top: 4px;
-    }
+    .blog-item:hover { opacity: 0.68; }
+    .blog-num { font-size: 11px; font-weight: 500; color: var(--text-tertiary); min-width: 24px; padding-top: 4px; }
     .blog-body { flex: 1; }
     .blog-tag {
       display: inline-block; font-size: 10px; font-weight: 500;
@@ -171,233 +108,232 @@
     }
     .blog-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
     .blog-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
-    .blog-arrow { color: var(--text-tertiary); padding-top: 4px; font-size: 15px; }
-
-    .stats-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px;
+    .blog-meta { font-size: 11px; color: var(--text-tertiary); margin-top: 8px; }
+    .blog-arrow { color: var(--text-tertiary); padding-top: 4px; font-size: 16px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 36px; }
+    .about-card { background: var(--bg-secondary); border-radius: 10px; padding: 18px 20px; }
+    .about-card-label { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 7px; }
+    .about-card-val { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+    .mission-strip {
+      background: var(--bg-secondary); border-radius: 16px;
+      padding: 48px 44px; margin: 0;
     }
-    .stat-card { background: var(--bg-secondary); border-radius: 10px; padding: 18px 20px; }
-    .stat-num {
-      font-family: 'Lora', serif;
-      font-size: 32px; font-weight: 500;
-      color: var(--teal); line-height: 1; margin-bottom: 6px;
-    }
-    .stat-label { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
-
-    .about-body {
-      font-size: 16px; line-height: 1.95;
-      color: var(--text-secondary); margin-bottom: 20px; max-width: 560px;
-    }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px;
-    }
-    .about-card { background: var(--bg-secondary); border-radius: 10px; padding: 16px 18px; }
-    .about-card-label {
-      font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
-      text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;
-    }
-    .about-card-val { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
-
-    footer {
-      padding: 32px 0;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 12px;
-    }
+    .disease-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .disease-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: 12px; padding: 24px 22px; }
+    .disease-card-title { font-size: 15px; font-weight: 500; margin-bottom: 6px; color: var(--text-primary); }
+    .disease-card-sub { font-size: 12px; color: var(--teal); font-weight: 500; margin-bottom: 10px; }
+    .disease-card-body { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
+    footer { padding: 36px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
     .footer-name { font-size: 13px; color: var(--text-tertiary); }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a {
-      font-size: 13px; color: var(--text-tertiary);
-      text-decoration: none; transition: color 0.15s;
-    }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { font-size: 13px; color: var(--text-tertiary); text-decoration: none; transition: color 0.15s; }
     .footer-links a:hover { color: var(--text-primary); }
-
-    @media (max-width: 600px) {
-      nav { padding: 0 20px; }
-      .nav-links { gap: 16px; }
-      .container { padding: 0 20px; }
-      section { padding: 52px 0; }
-      .hero { padding: 64px 0 52px; }
-      .stats-grid, .about-grid { grid-template-columns: 1fr; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .topic-card { transition: none; }
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; } .nav-links { gap: 16px; }
+      .container { padding: 0 20px; } section { padding: 56px 0; }
+      .hero { padding: 68px 0 56px; } .two-col { grid-template-columns: 1fr; gap: 28px; }
+      .stats-grid, .about-grid, .disease-cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+<nav>
+  <a class="nav-logo" href="index.html">Neuro<span>Lens</span></a>
+  <ul class="nav-links">
+    <li><a href="#story">My Story</a></li>
+    <li><a href="#topics">Topics</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
 
-  <nav>
-    <a class="nav-logo" href="#">Neuro<span>Lens</span></a>
-    <ul class="nav-links">
-      <li><a href="#story">My story</a></li>
-      <li><a href="#topics">Topics</a></li>
-      <li><a href="#journal">Journal</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-tag">Class of 2028 · Aspiring Neuroscientist</div>
-      <h1>I'm not a scientist yet.<br>But I already know <em>why</em> I want to become one.</h1>
-      <p class="hero-lead">
-        My grandfather has Parkinson's disease and dementia. I've watched him lose his words, his steadiness, his memories — things that seem like they should be permanent but aren't. There's no cure. There's no surgery that gives it all back. That felt unacceptable to me. So I started reading. Then researching. Then I couldn't stop. This is where I document everything I learn.
-      </p>
-      <div class="btn-group">
-        <a href="#story" class="btn-primary">Read my story →</a>
-        <a href="#topics" class="btn-ghost">Explore topics →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- STORY -->
-  <section id="story">
-    <div class="container">
-      <div class="section-eyebrow">Where this all began</div>
-      <h2 class="section-title">The man who taught me everything —<br>and the disease that started taking him away</h2>
-      <p class="story-body">My grandfather used to fix things. Broken radios, leaking pipes, the wobbly chair leg that nobody else bothered with. He had steady hands and a patient mind, and when I was little he let me sit beside him while he worked, explaining each step like I was already capable of understanding. I wasn't always. But I listened. That's where I learned that hard problems are worth sitting with.</p>
-      <p class="story-body">A few years ago, I started noticing things. Small things at first — a word he couldn't find mid-sentence, a tremor in his right hand that he'd try to hide by slipping it into his pocket. Then the diagnosis came: Parkinson's disease. Then dementia. Two diseases that work quietly and steadily and, as far as modern medicine is concerned, permanently. There is no cure for either.</p>
-      <div class="pullquote">
-        <p>Watching someone lose their memories isn't like losing a person all at once. It's slower than that. It happens in small moments — and that's what makes it so hard to accept.</p>
-      </div>
-      <p class="story-body">I didn't know how to grieve something that was still happening. So I did what I always do when something doesn't make sense: I looked it up. I read about dopamine and neurons and the basal ganglia. I learned what Lewy bodies are and why they matter. I found papers about deep brain stimulation and stayed up until 2 a.m. reading about clinical trials for drugs that don't exist yet. I wasn't looking for comfort. I was looking for a way in.</p>
-      <p class="story-body">That's when I realized neuroscience wasn't just interesting to me. It was urgent. And I understood something I couldn't have learned any other way: the gap between "we're making progress" and "we have a cure" is still enormous — and someone has to close it. This website is how I'm starting.</p>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-num">1B+</div>
-          <div class="stat-label">People affected by neurological disorders worldwide</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">0</div>
-          <div class="stat-label">Cures currently exist for Parkinson's disease or dementia</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TOPICS -->
-  <section id="topics">
-    <div class="container">
-      <div class="section-eyebrow">What I care about</div>
-      <h2 class="section-title">My research interests</h2>
-      <p class="section-sub">Four areas at the intersection of neuroscience and emerging technology — the ones keeping me up at night.</p>
-      <div class="topics-grid">
-        <div class="topic-card">
-          <span class="topic-tag tag-tech">Tech</span>
-          <div class="topic-name">Meta Glasses & AR</div>
-          <div class="topic-body">Most people see Meta glasses as a consumer gadget. I see them as something else — a real-time window into how the brain perceives, filters, and constructs the world around it. When you overlay digital information onto physical space, you're changing how the brain processes reality. That intersection of hardware, cognition, and perception is one of the most exciting research frontiers I've found.</div>
-        </div>
-        <div class="topic-card">
-          <span class="topic-tag tag-neuro">Neuroscience</span>
-          <div class="topic-name">Brain Mapping</div>
-          <div class="topic-body">The human brain has roughly 86 billion neurons and 100 trillion synaptic connections. We've mapped less of it than we've mapped the ocean floor. New tools — high-resolution fMRI, calcium imaging, neural organoids — are opening doors into regions we couldn't study before. How memories are encoded, why certain neurons die in Parkinson's, what happens in the earliest stages of dementia: the answers are in there.</div>
-        </div>
-        <div class="topic-card">
-          <span class="topic-tag tag-personal">Personal</span>
-          <div class="topic-name">Parkinson's & Dementia</div>
-          <div class="topic-body">This one isn't academic for me. My grandfather has both. Deep brain stimulation can manage tremors. Cholinesterase inhibitors can slow cognitive decline. But none of it reverses the damage. That gap — between managing a disease and actually curing it — is where I want to work. Not someday. Starting now, with understanding.</div>
-        </div>
-        <div class="topic-card">
-          <span class="topic-tag tag-biotech">Biotech</span>
-          <div class="topic-name">Biotech Frontiers</div>
-          <div class="topic-body">CRISPR can edit a single letter of DNA with near-surgical precision. Viral vectors can carry therapeutic genes directly into neurons. Biosensors can detect neurological changes before symptoms appear. These aren't science fiction — they're in labs and clinical trials right now. The most important breakthroughs in brain disease will come from people who understand both biology and technology.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- JOURNAL -->
-  <section id="journal">
-    <div class="container">
-      <div class="section-eyebrow">Research journal</div>
-      <h2 class="section-title">My learning journey</h2>
-      <p class="section-sub">Posts, discoveries, and questions I'm chasing — updated as I go.</p>
-      <div class="blog-list">
-        <a href="#" class="blog-item">
-          <div class="blog-num">01</div>
-          <div class="blog-body">
-            <span class="blog-tag tag-tech">Tech</span>
-            <div class="blog-title">What Meta glasses taught me about perception</div>
-            <div class="blog-desc">AR isn't just a gadget. When digital information overlays the physical world, the brain has to decide what's real — and that decision tells us everything about how perception actually works. I went deep on the neuroscience of visual processing and came out with a completely different understanding of what these devices are.</div>
-          </div>
-          <div class="blog-arrow">→</div>
-        </a>
-        <a href="#" class="blog-item">
-          <div class="blog-num">02</div>
-          <div class="blog-body">
-            <span class="blog-tag tag-neuro">Neuroscience</span>
-            <div class="blog-title">Deep brain stimulation — shocking the brain back to life</div>
-            <div class="blog-desc">Surgeons drill into the skull, implant electrodes deep inside the brain, and send electrical pulses into the subthalamic nucleus. For many Parkinson's patients, tremors stop almost instantly. I wanted to understand exactly why — and why it still isn't a cure.</div>
-          </div>
-          <div class="blog-arrow">→</div>
-        </a>
-        <a href="#" class="blog-item">
-          <div class="blog-num">03</div>
-          <div class="blog-body">
-            <span class="blog-tag tag-personal">Personal</span>
-            <div class="blog-title">My grandfather and the disease I want to cure</div>
-            <div class="blog-desc">A personal essay about watching Parkinson's and dementia take someone apart piece by piece — and why that became the reason I started studying neuroscience at 16. This is the one that started everything.</div>
-          </div>
-          <div class="blog-arrow">→</div>
-        </a>
-        <a href="#" class="blog-item">
-          <div class="blog-num">04</div>
-          <div class="blog-body">
-            <span class="blog-tag tag-biotech">Biotech</span>
-            <div class="blog-title">Could CRISPR edit away Parkinson's?</div>
-            <div class="blog-desc">Some forms of Parkinson's are linked to mutations in genes like LRRK2 and PINK1. If CRISPR can fix a single letter of DNA, could it one day correct those mutations before symptoms begin? I dug into the research — and found both real promise and real obstacles.</div>
-          </div>
-          <div class="blog-arrow">→</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="section-eyebrow">About</div>
-      <h2 class="section-title">Who I am</h2>
-      <p class="about-body">I'm a rising 11th grader, Class of 2028, based in Seoul. I'm passionate about neurotechnology, biotech, and the emerging tools being built at the intersection of both — not as hobbies, but as the fields I intend to dedicate my life to.</p>
-      <p class="about-body">My grandfather's diagnosis with Parkinson's disease and dementia turned what started as academic curiosity into something more urgent. I realized there's an enormous gap between "we're making progress" and "we have a cure" — and that closing it requires people who understand both the biology and the technology.</p>
-      <div class="pullquote">
-        <p>I don't know yet exactly what I'll build or discover. But I know the problem I want to work on — and I know that starting now, even as a high school student, matters.</p>
-      </div>
-      <p class="about-body">NeuroLens is where I document everything: the papers I read, the concepts I wrestle with, the questions I can't yet answer. It's a record of learning in public — honestly, from the beginning.</p>
-      <p class="about-body">The best way I know to honor my grandfather's steady hands is to build something with mine.</p>
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-card-label">Currently exploring</div>
-          <div class="about-card-val">Deep brain stimulation, CRISPR gene therapy, neural interfaces, AR perception research</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-label">Based in</div>
-          <div class="about-card-val">Seoul, South Korea · Class of 2028</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-label">Goal</div>
-          <div class="about-card-val">Contribute to curing Parkinson's disease and dementia — through research, biotech, or both</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-label">This site is</div>
-          <div class="about-card-val">A living research journal, updated as I learn — not a finished product</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+<!-- HERO -->
+<section class="hero" id="home">
   <div class="container">
-    <footer>
-      <div class="footer-name">NeuroLens · Class of 2028</div>
-      <div class="footer-links">
-        <a href="#story">Story</a>
-        <a href="#topics">Topics</a>
-        <a href="#journal">Journal</a>
-        <a href="#about">About</a>
-      </div>
-    </footer>
+    <div class="hero-tag">Class of 2028 · Mercersburg Academy · Aspiring Neuroscientist</div>
+    <h1>I'm not a scientist yet.<br>But I already know <em>why</em> I want to become one.</h1>
+    <p class="hero-lead">Both of my grandfathers are losing themselves to brain disease — one to Parkinson's, one to Alzheimer's. Modern medicine has treatments. It doesn't have cures. That felt unacceptable to me. So I started reading, researching, and building. This is where I document everything.</p>
+    <div class="btn-group">
+      <a href="#story" class="btn-primary">Read my story →</a>
+      <a href="journal.html" class="btn-ghost">Explore the journal →</a>
+    </div>
   </div>
+</section>
 
+<!-- STORY -->
+<section id="story">
+  <div class="container">
+    <div class="eyebrow">Where this all began</div>
+    <h2 class="sec-title">Two grandfathers. Two diseases.<br>One reason to keep going.</h2>
+    <p class="story-body">I grew up between two worlds. In South Korea, surrounded by family. At Mercersburg Academy in Pennsylvania, learning to think independently and rigorously. But no matter where I am, I carry the same weight: both of my grandfathers are being taken apart by diseases that science still cannot reverse.</p>
+    <p class="story-body">My maternal grandfather has Parkinson's disease. He was one of the most present people I've ever known — warm, deliberate, always there. I watched his hands start to tremble. I watched him lose the steadiness that I associated with him so completely that it felt like losing part of who he was. The doctors gave him medication. They talked about managing symptoms. No one talked about a cure, because there isn't one.</p>
+    <p class="story-body">My paternal grandfather has Alzheimer's disease. With him, the loss has been different — slower in some ways, more disorienting. He forgets things. Then he forgets people. There are days he looks at me and I can see him searching — reaching for something that used to be automatic. Both of them treated me like I was the most important person in any room. They gave me memories I will carry my whole life. They deserve better than what medicine currently offers them.</p>
+    <div class="pullquote">
+      <p>Losing someone to memory loss isn't like losing them all at once. It's hundreds of small losses — a name, a story, a moment of recognition. And each one reminds you how much still needs to be discovered.</p>
+    </div>
+    <p class="story-body">I didn't set out to become interested in neuroscience. I became interested in it the way you become interested in anything that feels urgent — because the alternative was just watching, and I couldn't do that. So I read. I found papers on dopamine and alpha-synuclein aggregation. I learned what plaques and tangles actually are and why they kill neurons. I read about deep brain stimulation for Parkinson's and about anti-amyloid antibodies for Alzheimer's. I stayed up past 2 a.m. reading about clinical trials. I wasn't looking for comfort. I was looking for a way in.</p>
+    <p class="story-body">That's when neurotechnology entered the picture. Brain-computer interfaces. Augmented reality as a diagnostic tool. Biosensors that detect neurological change before symptoms appear. Meta glasses that might one day map how perception breaks down in disease. I realized that the future of neuroscience wasn't just biology — it was the intersection of biology and technology. And that's the intersection I want to live and work in.</p>
+    <p class="story-body">This website is where I document that journey. Every concept I learn, every paper I wrestle with, every question I can't yet answer — it goes here. I'm a junior in high school. I don't have the answers. But I'm building the foundation to find them.</p>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-num">55M+</div><div class="stat-label">People living with dementia worldwide — a number expected to triple by 2050</div></div>
+      <div class="stat-card"><div class="stat-num">10M+</div><div class="stat-label">People living with Parkinson's disease globally, with no cure in sight</div></div>
+      <div class="stat-card"><div class="stat-num">0</div><div class="stat-label">Diseases that fully reverse Alzheimer's or Parkinson's progression — as of today</div></div>
+      <div class="stat-card"><div class="stat-num">$3B+</div><div class="stat-label">Invested annually in neurodegenerative disease research — progress is happening, but slowly</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DISEASES DEEP DIVE -->
+<section id="diseases">
+  <div class="container">
+    <div class="eyebrow">The diseases I'm studying</div>
+    <h2 class="sec-title">Understanding what I'm up against</h2>
+    <p class="sec-sub">Before you can help solve a problem, you have to understand it. Here's what I've learned so far about the two diseases shaping my life and my research direction.</p>
+    <div class="disease-cards">
+      <div class="disease-card">
+        <div class="disease-card-title">Parkinson's Disease</div>
+        <div class="disease-card-sub">My maternal grandfather's diagnosis</div>
+        <div class="disease-card-body">Parkinson's is caused by the loss of dopamine-producing neurons in a brain region called the substantia nigra. Without enough dopamine, movement becomes difficult to control. The hallmarks — tremors, rigidity, slowness — are just the visible surface. Beneath them is a process of protein misfolding: clumps of alpha-synuclein called Lewy bodies accumulate and kill neurons. Current treatments manage symptoms but don't stop the underlying damage. Deep brain stimulation, the most advanced intervention available, sends electrical pulses into the subthalamic nucleus to reduce tremors — but it doesn't touch the cause.</div>
+      </div>
+      <div class="disease-card">
+        <div class="disease-card-title">Alzheimer's Disease</div>
+        <div class="disease-card-sub">My paternal grandfather's diagnosis</div>
+        <div class="disease-card-body">Alzheimer's is the most common form of dementia, responsible for 60–70% of cases. It's defined by two pathological features: amyloid-beta plaques that accumulate between neurons, and tau tangles that form inside them. Together, they disrupt and eventually destroy neural communication. Memory goes first because the hippocampus — the brain's memory center — is hit earliest. There are now FDA-approved anti-amyloid antibodies like lecanemab that can slow progression in early stages, but they don't reverse damage. The window for intervention, if there is one, is before symptoms begin — which is why early detection through biomarkers and imaging is one of the most important frontiers in the field right now.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section id="topics">
+  <div class="container">
+    <div class="eyebrow">What I care about</div>
+    <h2 class="sec-title">My research interests</h2>
+    <p class="sec-sub">Four areas at the intersection of neuroscience and technology — the ones I keep returning to, the ones I think matter most.</p>
+    <div class="topics-grid">
+      <a href="journal.html#ar" class="topic-card">
+        <span class="topic-tag tag-tech">Tech</span>
+        <div class="topic-name">Meta Glasses & AR</div>
+        <div class="topic-body">Most people see Meta glasses as a consumer product. I see them as a potential research tool — a way to study perception in real environments, track subtle behavioral changes that signal early disease, and eventually build assistive overlays for patients with cognitive decline. The brain constructs reality from sensory input. AR disrupts that process in controlled ways. That makes it scientifically interesting.</div>
+      </a>
+      <a href="journal.html#mapping" class="topic-card">
+        <span class="topic-tag tag-neuro">Neuroscience</span>
+        <div class="topic-name">Brain Mapping</div>
+        <div class="topic-body">The human brain has 86 billion neurons and roughly 100 trillion synaptic connections. We've mapped less of it than we've mapped the ocean floor. New tools — ultra-high-field fMRI, calcium imaging, single-cell sequencing — are beginning to change that. I'm particularly interested in the circuits involved in memory formation and motor control: the exact systems disrupted by Alzheimer's and Parkinson's.</div>
+      </a>
+      <a href="journal.html#pd-ad" class="topic-card">
+        <span class="topic-tag tag-personal">Personal</span>
+        <div class="topic-name">Parkinson's & Alzheimer's</div>
+        <div class="topic-body">This is the one that started everything. Two grandfathers, two diagnoses, zero cures. I study these diseases not just to understand them academically but because understanding them is the first step toward doing something about them. Every paper I read on alpha-synuclein, every article on amyloid clearance, every clinical trial result — it all goes toward the same goal.</div>
+      </a>
+      <a href="journal.html#biotech" class="topic-card">
+        <span class="topic-tag tag-biotech">Biotech</span>
+        <div class="topic-name">Biotech Frontiers</div>
+        <div class="topic-body">CRISPR can now edit a single nucleotide with near-surgical precision. Viral vectors can ferry therapeutic genes directly into neurons. Wearable biosensors can detect neurological changes months before clinical symptoms appear. These tools are being used in labs and clinical trials right now. The most important breakthroughs in brain disease will come from people who understand both the biology and the engineering.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="mission" style="border-bottom:0.5px solid var(--border); padding: 0;">
+  <div class="container" style="padding-top:0; padding-bottom:0;">
+    <div class="mission-strip">
+      <div class="eyebrow">My mission</div>
+      <h2 class="sec-title" style="max-width:520px;">The most important frontier isn't outer space. It's inside our skulls.</h2>
+      <p class="story-body" style="margin-bottom:18px;">We send satellites to map distant planets. We build particle accelerators to study the smallest units of matter. And yet the three-pound organ that does the observing — the one that holds every memory, every personality, every dream — remains largely unmapped and poorly understood.</p>
+      <p class="story-body" style="margin-bottom:18px;">I believe the next great era of discovery is neurological. I believe the tools being built now — brain-computer interfaces, AR overlays, single-cell sequencing, gene therapies — will do for brain disease what antibiotics did for infection. And I believe that the people who will make that happen are in high school right now, learning how to ask the right questions.</p>
+      <p class="story-body" style="margin-bottom:0;">I'm one of them. And I'm getting started.</p>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL PREVIEW -->
+<section id="journal-preview">
+  <div class="container">
+    <div class="eyebrow">Research journal</div>
+    <h2 class="sec-title">Latest entries</h2>
+    <p class="sec-sub">My ongoing record of what I'm reading, learning, and thinking about — in public, from the beginning.</p>
+    <div class="blog-list">
+      <a href="journal.html#dbs" class="blog-item">
+        <div class="blog-num">01</div>
+        <div class="blog-body">
+          <span class="blog-tag tag-neuro">Neuroscience</span>
+          <div class="blog-title">Deep brain stimulation — shocking the brain back to life</div>
+          <div class="blog-desc">Surgeons implant electrodes deep in the brain and send electrical pulses into the subthalamic nucleus. For many Parkinson's patients, tremors stop almost immediately. I wanted to understand exactly how — and why it still doesn't count as a cure.</div>
+          <div class="blog-meta">Entry 01 · Parkinson's Disease</div>
+        </div>
+        <div class="blog-arrow">→</div>
+      </a>
+      <a href="journal.html#amyloid" class="blog-item">
+        <div class="blog-num">02</div>
+        <div class="blog-body">
+          <span class="blog-tag tag-biotech">Biotech</span>
+          <div class="blog-title">Lecanemab and the hope of slowing Alzheimer's</div>
+          <div class="blog-desc">In 2023, the FDA approved lecanemab — an antibody that clears amyloid plaques from the brain. It's the most significant Alzheimer's drug in decades. I read the trial data and tried to understand what "slowing progression by 27%" actually means for a patient.</div>
+          <div class="blog-meta">Entry 02 · Alzheimer's Disease</div>
+        </div>
+        <div class="blog-arrow">→</div>
+      </a>
+      <a href="journal.html#ar" class="blog-item">
+        <div class="blog-num">03</div>
+        <div class="blog-body">
+          <span class="blog-tag tag-tech">Tech</span>
+          <div class="blog-title">What Meta glasses taught me about how the brain builds reality</div>
+          <div class="blog-desc">AR forces the brain to integrate real and digital information simultaneously. The way it handles — or fails to handle — that integration reveals how visual processing actually works. And it opened my mind to what these devices could do in a clinical setting.</div>
+          <div class="blog-meta">Entry 03 · Neurotechnology</div>
+        </div>
+        <div class="blog-arrow">→</div>
+      </a>
+      <a href="journal.html#crispr" class="blog-item">
+        <div class="blog-num">04</div>
+        <div class="blog-body">
+          <span class="blog-tag tag-biotech">Biotech</span>
+          <div class="blog-title">Could CRISPR edit away Parkinson's?</div>
+          <div class="blog-desc">Some Parkinson's cases are linked to mutations in LRRK2 and PINK1. If CRISPR can correct a single DNA letter, could it fix these mutations before neurodegeneration begins? I read the early research — and found both real promise and honest obstacles.</div>
+          <div class="blog-meta">Entry 04 · Gene Therapy</div>
+        </div>
+        <div class="blog-arrow">→</div>
+      </a>
+    </div>
+    <div style="margin-top: 32px;">
+      <a href="journal.html" class="btn-primary">View all journal entries →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="eyebrow">About</div>
+    <h2 class="sec-title">Who I am</h2>
+    <p class="story-body">I'm a South Korean student at Mercersburg Academy in Pennsylvania, rising junior, Class of 2028. I came to the United States as a boarding student, which means I live between two cultures — carrying the warmth of Korean family traditions and the rigorous academic environment of an American prep school.</p>
+    <p class="story-body">My interest in neuroscience didn't come from a class. It came from my family. My maternal grandfather was diagnosed with Parkinson's disease, my paternal grandfather with Alzheimer's. Two of the most important men in my life, each losing something essential to brain disease. They were the kind of grandfathers who made every visit feel like the most important day of the week — patient, generous, deeply present. Watching them change made me want to understand why. And then it made me want to do something about it.</p>
+    <div class="pullquote">
+      <p>I don't know yet whether I'll go into research, medicine, bioengineering, or something that doesn't have a name yet. But I know the problem I want to work on for the rest of my life.</p>
+    </div>
+    <p class="story-body">NeuroLens is where I build toward that. It's a research journal, a learning log, and a long-term commitment made public. Every entry represents something I genuinely tried to understand — not something I skimmed. The best way I know to honor what my grandfathers gave me is to build something that might, one day, give something back.</p>
+    <div class="about-grid">
+      <div class="about-card"><div class="about-card-label">School</div><div class="about-card-val">Mercersburg Academy, Pennsylvania · Boarding student</div></div>
+      <div class="about-card"><div class="about-card-label">From</div><div class="about-card-val">South Korea · Class of 2028</div></div>
+      <div class="about-card"><div class="about-card-label">Currently exploring</div><div class="about-card-val">Deep brain stimulation, CRISPR, anti-amyloid therapies, AR neuroscience, brain mapping</div></div>
+      <div class="about-card"><div class="about-card-label">Long-term goal</div><div class="about-card-val">Contribute to curing Parkinson's and Alzheimer's — through research, biotech, or both</div></div>
+      <div class="about-card"><div class="about-card-label">This site is</div><div class="about-card-val">A living journal of learning — not a finished product. Updated as I go.</div></div>
+      <div class="about-card"><div class="about-card-label">Personal</div><div class="about-card-val">Two grandfathers. Two diagnoses. One reason to keep reading past midnight.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <footer>
+    <div class="footer-name">NeuroLens · Mercersburg Academy · Class of 2028</div>
+    <div class="footer-links">
+      <a href="#story">Story</a>
+      <a href="#topics">Topics</a>
+      <a href="journal.html">Journal</a>
+      <a href="#about">About</a>
+    </div>
+  </footer>
+</div>
 </body>
 </html>

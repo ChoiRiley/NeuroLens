@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Journal — NeuroLens</title>
+  <meta name="description" content="A high school student's journal of neuroscience research — covering Parkinson's disease, Alzheimer's, CRISPR, deep brain stimulation, Meta glasses, and more." />
+  <meta name="keywords" content="neuroscience journal, Parkinson's research, Alzheimer's research, deep brain stimulation, CRISPR neurology, Meta glasses brain, neurotech blog, high school neuroscience" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #1D9E75; --teal-light: #E1F5EE; --teal-mid: #0F6E56;
+      --text-primary: #111110; --text-secondary: #5F5E5A; --text-tertiary: #888780;
+      --border: rgba(0,0,0,0.1); --bg: #ffffff; --bg-secondary: #F7F6F3; --max: 740px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text-primary); background: var(--bg); -webkit-font-smoothing: antialiased; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.93); backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border);
+      padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 58px;
+    }
+    .nav-logo { font-size: 15px; font-weight: 500; text-decoration: none; color: var(--text-primary); }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    .page-hero { padding: 72px 0 56px; border-bottom: 0.5px solid var(--border); }
+    .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 10px; }
+    .page-title { font-family: 'Lora', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; margin-bottom: 16px; }
+    .page-sub { font-size: 16px; color: var(--text-secondary); line-height: 1.8; max-width: 560px; }
+    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; padding: 28px 0; border-bottom: 0.5px solid var(--border); }
+    .filter-btn {
+      font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px;
+      border: 0.5px solid var(--border); background: var(--bg);
+      color: var(--text-secondary); cursor: pointer; transition: all 0.15s;
+    }
+    .filter-btn:hover, .filter-btn.active { background: var(--text-primary); color: #fff; border-color: var(--text-primary); }
+    .entry { padding: 52px 0; border-bottom: 0.5px solid var(--border); }
+    .entry:last-child { border-bottom: none; }
+    .entry-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+    .entry-num { font-size: 11px; font-weight: 500; color: var(--text-tertiary); min-width: 28px; padding-top: 4px; }
+    .entry-meta { flex: 1; }
+    .entry-tag {
+      display: inline-block; font-size: 10px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 2px 9px; border-radius: 20px; margin-bottom: 10px;
+    }
+    .tag-tech { background: #E1F5EE; color: #0F6E56; }
+    .tag-neuro { background: #E6F1FB; color: #185FA5; }
+    .tag-personal { background: #FAEEDA; color: #854F0B; }
+    .tag-biotech { background: #EEEDFE; color: #534AB7; }
+    .entry-title { font-family: 'Lora', serif; font-size: clamp(20px, 2.8vw, 26px); font-weight: 500; line-height: 1.28; margin-bottom: 6px; }
+    .entry-subtitle { font-size: 14px; color: var(--text-tertiary); }
+    .entry-body { font-size: 15px; line-height: 1.95; color: var(--text-secondary); margin-bottom: 20px; max-width: 660px; margin-left: 44px; }
+    .pullquote { border-left: 2px solid var(--teal); padding: 5px 0 5px 22px; margin: 28px 0 28px 44px; }
+    .pullquote p { font-family: 'Lora', serif; font-size: 17px; line-height: 1.75; color: var(--text-primary); font-style: italic; max-width: 560px; }
+    .key-takeaway { background: var(--bg-secondary); border-radius: 10px; padding: 20px 22px; margin: 28px 0 0 44px; max-width: 620px; }
+    .key-takeaway-label { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 8px; }
+    .key-takeaway-text { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
+    .what-i-want { background: var(--bg-secondary); border-radius: 10px; padding: 20px 22px; margin: 16px 0 0 44px; max-width: 620px; border-left: 2px solid var(--teal); }
+    .what-i-want-label { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 8px; }
+    .what-i-want-text { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
+    footer { padding: 36px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 0.5px solid var(--border); }
+    .footer-name { font-size: 13px; color: var(--text-tertiary); }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { font-size: 13px; color: var(--text-tertiary); text-decoration: none; }
+    .footer-links a:hover { color: var(--text-primary); }
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; } .nav-links { gap: 14px; }
+      .container { padding: 0 20px; }
+      .entry-body, .pullquote, .key-takeaway, .what-i-want { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">Neuro<span>Lens</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#story">My Story</a></li>
+    <li><a href="index.html#topics">Topics</a></li>
+    <li><a href="journal.html" class="active">Journal</a></li>
+    <li><a href="index.html#about">About</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Research Journal</div>
+    <h1 class="page-title">Learning in public —<br>from the beginning.</h1>
+    <p class="page-sub">Every entry is something I genuinely tried to understand. Not skimmed. These posts track my thinking as I build toward a field I hope to work in one day. Some entries are summaries of research. Some are personal. All of them are honest.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterEntries('all', this)">All entries</button>
+    <button class="filter-btn" onclick="filterEntries('neuro', this)">Neuroscience</button>
+    <button class="filter-btn" onclick="filterEntries('biotech', this)">Biotech</button>
+    <button class="filter-btn" onclick="filterEntries('tech', this)">Tech</button>
+    <button class="filter-btn" onclick="filterEntries('personal', this)">Personal</button>
+  </div>
+</div>
+
+<div class="container" id="entries-container">
+
+  <!-- ENTRY 01 -->
+  <article class="entry" id="dbs" data-category="neuro">
+    <div class="entry-header">
+      <div class="entry-num">01</div>
+      <div class="entry-meta">
+        <span class="entry-tag tag-neuro">Neuroscience</span>
+        <h2 class="entry-title">Deep brain stimulation —<br>shocking the brain back to life</h2>
+        <div class="entry-subtitle">Parkinson's Disease · What I learned, and what it can't do</div>
+      </div>
+    </div>
+    <p class="entry-body">When I first heard about deep brain stimulation, I couldn't understand how it was real. Surgeons drill through the skull, thread electrodes deep into a structure called the subthalamic nucleus, and run wires under the skin to a pacemaker-like device in the chest. They turn it on. For many Parkinson's patients, the tremors stop — sometimes within seconds. It seemed like science fiction. It's been in clinical use since the 1990s.</p>
+    <p class="entry-body">The subthalamic nucleus is a small, lens-shaped structure that plays a key role in motor control. In Parkinson's, the loss of dopaminergic neurons in the substantia nigra throws the basal ganglia circuit out of balance. The subthalamic nucleus becomes overactive — firing in abnormal, synchronized bursts that disrupt smooth movement. DBS works by interrupting that abnormal signaling. The exact mechanism is still debated, but the effect is clear: in the right patients, it dramatically reduces tremor, rigidity, and slowness of movement.</p>
+    <div class="pullquote">
+      <p>DBS doesn't fix the brain. It masks the noise long enough for a person to live more fully inside the life they still have. That's meaningful. But it's not a cure.</p>
+    </div>
+    <p class="entry-body">Here's what DBS doesn't do: it doesn't stop neurons from dying. The underlying neurodegeneration continues. Alpha-synuclein still misfolds and accumulates. Lewy bodies still spread. Many patients do well for years, then find that DBS becomes less effective as the disease progresses into brain regions not targeted by the electrodes. The surgery also carries risks — infection, lead migration, hardware failure, and in rare cases, intracranial hemorrhage.</p>
+    <p class="entry-body">What I found most interesting was the research happening now around closed-loop DBS — systems that read the brain's electrical activity in real time and adjust stimulation automatically, rather than running at a fixed setting. This is where neurotechnology and neuroscience intersect most directly. The brain tells the device what it needs. The device responds. It's a glimpse of what brain-computer interfaces could eventually become for patients who can't speak or move.</p>
+    <div class="key-takeaway">
+      <div class="key-takeaway-label">What I learned</div>
+      <div class="key-takeaway-text">DBS is one of the most powerful tools we have for Parkinson's — and it's still not enough. It treats the symptom (disordered movement) without touching the cause (neurodegeneration). The next frontier is neuroprotection: therapies that slow or stop the death of dopaminergic neurons. Until that exists, DBS is a remarkable bridge — but only a bridge.</div>
+    </div>
+    <div class="what-i-want">
+      <div class="what-i-want-label">The question I'm left with</div>
+      <div class="what-i-want-text">If closed-loop DBS can read and respond to the brain's electrical state in real time, what else could that kind of neural readout tell us? Could it detect early signs of disease progression before they become symptomatic? Could it one day communicate with gene therapy systems to deliver treatment exactly when and where the brain needs it? These feel like the right questions to be asking.</div>
+    </div>
+  </article>
+
+  <!-- ENTRY 02 -->
+  <article class="entry" id="amyloid" data-category="biotech">
+    <div class="entry-header">
+      <div class="entry-num">02</div>
+      <div class="entry-meta">
+        <span class="entry-tag tag-biotech">Biotech</span>
+        <h2 class="entry-title">Lecanemab and the hope of slowing Alzheimer's</h2>
+        <div class="entry-subtitle">Alzheimer's Disease · The most important drug approval in decades</div>
+      </div>
+    </div>
+    <p class="entry-body">In January 2023, the FDA gave full approval to lecanemab (brand name Leqembi) — an antibody drug that targets amyloid-beta, one of the two hallmark proteins that accumulate in Alzheimer's disease. It was the first drug to demonstrate that clearing amyloid from the brain actually slows cognitive decline. The clinical trial showed a 27% reduction in decline on a standard cognitive assessment over 18 months. The headlines called it a breakthrough. I wanted to understand what that actually means.</p>
+    <p class="entry-body">Lecanemab is a monoclonal antibody — an engineered protein designed to bind to and tag amyloid-beta protofibrils for removal by the immune system. The idea behind it comes from the amyloid hypothesis: that the accumulation of amyloid plaques between neurons triggers a cascade that eventually kills them. For decades, drugs targeting amyloid kept failing in trials. Lecanemab is the first to show clear clinical benefit — not just biomarker improvement, but measurable slowing of real-world cognitive decline.</p>
+    <div class="pullquote">
+      <p>A 27% reduction in decline sounds modest. But for a disease that only moves in one direction, slowing it down is the closest thing to hope that millions of families currently have.</p>
+    </div>
+    <p class="entry-body">But I wanted to understand the limits too. Lecanemab works only in early-stage Alzheimer's — before too many neurons are already dead. It comes with serious risks: about 35% of patients in the trial experienced ARIA (amyloid-related imaging abnormalities), which includes brain swelling and micro-bleeds. It requires infusions every two weeks, costs roughly $26,000 per year, and isn't accessible to most patients globally. And it doesn't reverse any damage already done. It slows a process. It doesn't stop or undo it.</p>
+    <p class="entry-body">What struck me most was the implications for early detection. If lecanemab only works before significant neuronal loss, then identifying Alzheimer's years before symptoms begin becomes critical. This is driving intense research into blood biomarkers — particularly plasma p-tau217, which can now predict Alzheimer's pathology with high accuracy from a simple blood test. If you could detect amyloid accumulation a decade before memory loss begins, you could intervene when intervention actually matters.</p>
+    <div class="key-takeaway">
+      <div class="key-takeaway-label">What I learned</div>
+      <div class="key-takeaway-text">Lecanemab represents a proof of concept more than a cure: the amyloid hypothesis is real, and clearing amyloid matters. But the window for treatment is narrow, the side effects are real, and access is limited. The next step isn't a better version of lecanemab — it's catching the disease before plaques even form. That's where biomarkers, imaging, and early detection technology become the most important tools in the fight.</div>
+    </div>
+    <div class="what-i-want">
+      <div class="what-i-want-label">The question I'm left with</div>
+      <div class="what-i-want-text">My paternal grandfather's Alzheimer's was caught after symptoms appeared — which means the window for drugs like lecanemab may already be closed for him. That's a hard thing to sit with. It also makes me want to understand everything about how we detect brain disease earlier. Could AR-based cognitive assessments catch subtle decline? Could wearable biosensors track neural patterns that precede symptoms? That's the research direction I find myself most drawn to.</div>
+    </div>
+  </article>
+
+  <!-- ENTRY 03 -->
+  <article class="entry" id="ar" data-category="tech">
+    <div class="entry-header">
+      <div class="entry-num">03</div>
+      <div class="entry-meta">
+        <span class="entry-tag tag-tech">Tech</span>
+        <h2 class="entry-title">What Meta glasses taught me about how the brain builds reality</h2>
+        <div class="entry-subtitle">Neurotechnology · AR as a research tool, not just a product</div>
+      </div>
+    </div>
+    <p class="entry-body">I've been interested in Meta glasses since I first read about them — not because I wanted to wear them at lunch, but because of what they actually are: a device that overlays digital information onto the physical world in real time. That's not a consumer feature. That's a scientific instrument. And the more I read about how the brain processes what we see, the more I became convinced these devices have an important role to play in neuroscience research.</p>
+    <p class="entry-body">The brain doesn't passively receive visual input. It actively predicts and constructs what it expects to see, then updates that model when sensory data conflicts with the prediction. This is called predictive processing, and it's one of the most influential frameworks in modern neuroscience. When you put on AR glasses and overlay a digital object onto a real table, you're creating a conflict between prediction and input. How the brain resolves that conflict — and how resolution changes with age, disease, or injury — is scientifically interesting.</p>
+    <div class="pullquote">
+      <p>The brain doesn't see the world. It builds a model of the world, then checks it against incoming data. AR disrupts that process in controlled, measurable ways. That makes it a tool, not just a gadget.</p>
+    </div>
+    <p class="entry-body">In Parkinson's disease, visual processing and spatial perception are often disrupted early — sometimes before motor symptoms appear. Patients report difficulty judging distances, navigating crowded spaces, and tracking moving objects. Could AR-based assessments detect these subtle perceptual changes earlier than current clinical tests? There's early research suggesting yes. Some labs are using VR and AR environments to track eye movement patterns, reaction times, and spatial navigation as biomarkers for neurological disease.</p>
+    <p class="entry-body">In Alzheimer's, spatial disorientation is one of the earliest and most distressing symptoms — patients get lost in familiar places because the hippocampus, which encodes spatial maps, is one of the first structures affected. Virtual and augmented environments offer a way to test spatial memory precisely and repeatedly, creating a longitudinal picture of how navigation ability changes over time.</p>
+    <div class="key-takeaway">
+      <div class="key-takeaway-label">What I learned</div>
+      <div class="key-takeaway-text">AR isn't just an interface. It's an experimental environment — one that can be precisely controlled, endlessly varied, and passively monitored. For neuroscience, that's extraordinary. You can study perception, attention, memory, and motor planning in real-world-like conditions without the noise of a traditional lab. I think AR and VR will become standard tools in clinical neuroscience within the next decade. And I want to be someone who helps build that.</div>
+    </div>
+    <div class="what-i-want">
+      <div class="what-i-want-label">The question I'm left with</div>
+      <div class="what-i-want-text">What would it look like to build an AR-based early screening tool for Alzheimer's or Parkinson's? Something a family doctor could use — a short spatial navigation task, a perceptual assessment — that generates data comparable to expensive neuroimaging? I don't know how to build that yet. But I know what it would need to do. And that feels like the beginning of an idea worth pursuing.</div>
+    </div>
+  </article>
+
+  <!-- ENTRY 04 -->
+  <article class="entry" id="crispr" data-category="biotech">
+    <div class="entry-header">
+      <div class="entry-num">04</div>
+      <div class="entry-meta">
+        <span class="entry-tag tag-biotech">Biotech</span>
+        <h2 class="entry-title">Could CRISPR edit away Parkinson's?</h2>
+        <div class="entry-subtitle">Gene Therapy · Real promise, honest obstacles</div>
+      </div>
+    </div>
+    <p class="entry-body">CRISPR-Cas9 can find a specific sequence of DNA — a single sentence in a three-billion-letter book — and cut it, replace it, or silence it with near-surgical precision. Since Jennifer Doudna and Emmanuelle Charpentier described the system in 2012, it has transformed biology. The question I wanted to answer: can it do anything for Parkinson's disease?</p>
+    <p class="entry-body">About 10–15% of Parkinson's cases are genetic — caused by mutations in specific genes. The most common are LRRK2 (leucine-rich repeat kinase 2), which in its mutant form appears to hyperactivate a cellular cleaning process in ways that damage neurons, and PINK1/Parkin, which disrupts mitochondrial quality control. In principle, CRISPR could correct these mutations — either in cells before transplantation or, more ambitiously, delivered directly to neurons in the brain.</p>
+    <div class="pullquote">
+      <p>The idea is almost too elegant: find the typo in the genetic code that causes the disease, and fix it. The challenge is doing that safely, specifically, and reliably in 86 billion neurons.</p>
+    </div>
+    <p class="entry-body">The obstacles are real. Getting CRISPR into the brain requires a delivery vehicle — usually an adeno-associated virus (AAV) — that can cross the blood-brain barrier and infect neurons without triggering immune responses. Even if delivery works, editing efficiency in neurons is low: most cells don't get edited. Off-target effects — unintended cuts in other parts of the genome — remain a concern, though newer base-editing and prime-editing systems have dramatically improved precision. And for the 85–90% of Parkinson's cases that aren't clearly genetic, CRISPR's role is less obvious.</p>
+    <p class="entry-body">There's also a timing problem. By the time Parkinson's is diagnosed, roughly 60–80% of dopaminergic neurons in the substantia nigra are already dead. Fixing a gene mutation at that point doesn't restore what's been lost. Like lecanemab for Alzheimer's, the real power of genetic intervention may lie in prevention — correcting mutations in people who carry them before neurodegeneration begins.</p>
+    <div class="key-takeaway">
+      <div class="key-takeaway-label">What I learned</div>
+      <div class="key-takeaway-text">CRISPR is one of the most powerful tools biology has ever had. For Parkinson's, its most plausible near-term use is in stem cell therapies — editing patient-derived cells to remove disease-causing mutations, then using those cells to replace lost neurons. Longer term, direct in-vivo editing in the brain remains a goal. The technology is advancing faster than I expected when I started reading. I don't think "CRISPR cures Parkinson's" is science fiction. I think it's a research agenda.</div>
+    </div>
+    <div class="what-i-want">
+      <div class="what-i-want-label">The question I'm left with</div>
+      <div class="what-i-want-text">If CRISPR's biggest limitation for Parkinson's is the timing — intervening before damage accumulates — then the most important companion technology isn't better CRISPR. It's better early detection. Blood biomarkers, AR-based behavioral assessments, wearable sensors. These aren't separate research tracks. They're the same project. I keep arriving at the same conclusion from different directions: early detection might be the most important problem in neurodegenerative disease right now.</div>
+    </div>
+  </article>
+
+  <!-- ENTRY 05 -->
+  <article class="entry" id="pd-ad" data-category="personal">
+    <div class="entry-header">
+      <div class="entry-num">05</div>
+      <div class="entry-meta">
+        <span class="entry-tag tag-personal">Personal</span>
+        <h2 class="entry-title">My two grandfathers, and the diseases I want to help cure</h2>
+        <div class="entry-subtitle">Personal Essay · Why this is personal, not just academic</div>
+      </div>
+    </div>
+    <p class="entry-body">I grew up with four grandparents who loved me in four completely different ways. My maternal grandfather was the patient one — the one who let me sit beside him and ask questions and never made me feel like a burden for being curious. My paternal grandfather was warmer in a different way, more expressive, the one who made every visit feel like a celebration. Both of them shaped who I am. Both of them are losing something essential now.</p>
+    <p class="entry-body">My maternal grandfather has Parkinson's disease. I notice it most in his hands — the tremor he tries to control, the way he holds things differently now. He doesn't complain. He adapts. But I see the effort it takes, and it costs something to watch. The man with the steadiest hands I knew now has to think about things that used to be automatic. Parkinson's does that: it makes the unconscious conscious, and the effortless effortful.</p>
+    <p class="entry-body">My paternal grandfather has Alzheimer's disease. His loss is different — quieter in some moments, more disorienting in others. There are times he doesn't immediately know who I am. He'll look at me and search — I can see him searching — and then something clicks. Or sometimes it doesn't. I've learned not to show that it affects me, because it doesn't help him if it does. I just hold his hand and talk about things he remembers. We go back to places that still exist for him.</p>
+    <div class="pullquote">
+      <p>They both gave me memories I'll carry my whole life. That feels like both a gift and a responsibility — to understand what memory is, what happens when it breaks, and what might one day fix it.</p>
+    </div>
+    <p class="entry-body">I'm a boarding student at Mercersburg Academy in Pennsylvania, thousands of miles from both of them. Distance has a way of sharpening things. When you can't be there, you find other ways to be useful. For me, that meant reading. Learning. Building toward something that might, in some small way, matter.</p>
+    <p class="entry-body">I don't know yet what my contribution will look like. Maybe I'll end up in a research lab. Maybe in clinical medicine. Maybe in biotech, building the tools that researchers and doctors use. What I know is the problem I want to work on — and that knowing that, at 16, is something I don't take for granted. Most people spend years figuring out what they care about. I had two grandfathers who showed me.</p>
+    <div class="key-takeaway">
+      <div class="key-takeaway-label">Why I'm writing this publicly</div>
+      <div class="key-takeaway-text">Because learning in private is fine, but learning in public creates accountability. If I write down what I think I understand, I have to actually understand it. If I publish questions I can't answer, someone who can might find them. And because someday, when I have the chance to do work that matters in this field, I want there to be a record of when it started — and why.</div>
+    </div>
+  </article>
+
+</div>
+
+<div class="container">
+  <footer>
+    <div class="footer-name">NeuroLens · Mercersburg Academy · Class of 2028</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#story">Story</a>
+      <a href="index.html#topics">Topics</a>
+      <a href="index.html#about">About</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function filterEntries(category, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.entry').forEach(entry => {
+      if (category === 'all' || entry.dataset.category === category) {
+        entry.style.display = '';
+      } else {
+        entry.style.display = 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>
